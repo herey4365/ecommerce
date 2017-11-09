@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+     <head>
+         <title> Musical instruments </title>
+         <style>
+            img{
+                width:450px;
+            }
+            input{
+                width:350px;
+            }
+         </style>
+         <script>
+             function purchase(subtotal){
+                 var Qty1 = document.getElementById("Qty1");
+                 var Qty2 = documnet.getElementById("Qty2");
+                 var Qty3 = document.getElementById("Qty3");
+                 var output = document.getElementById("output");
+                 var subtotal = (parseInt(Qty1.value * 80) + parseInt(Qty2.value * 120) + parseInt(Qty3.value *100));
+                 var items = parseInt(Qty1.value) + parseint(Qty2.value) + parseInt(Qty3.value);
+                 var tax = subtotal *(8.875)/100;
+                 var shipping = "  ";
+                 if (subtotal <= 100) {
+                     shipping = 25
+                 } else if (subtotal > 100 && subtotal <= 200){
+                     shipping = 10
+                 } else if ( subtotal > 200){
+                     shipping = 0
+                 }
+                 var total = shipping + subtotal + tax;
+                 var build = "  ";
+                     build += "subtotal: " + subtotal + "\n";
+                     build += "tax: " + tax
+                     build += "shipping: " + shipping
+                     build += "total: " + total
+                output.innerHTML = build;
+                console.log(compsubtotal + profit);
+             }
+         </script>
+    </head>
+    <body>
+         <div>
+            <h2> Guitar </h2>
+            <img src ="guitar.PNG"><br>
+            <span><h3> Price $80  </h3></span>
+            <p><h4>A guitar that comes with a pick!
+            </h4>
+            </p>
+            <input id = "Guitar" type = "text"><br>
+
+        </div>
+
+                 <div>
+            <h2> Piano </h2>
+            <img src ="piano.JPEG"><br>
+            <span><h3> Price $120 </h3></span>
+            <p><h4> A great piano 
+            </h4>
+            </p>
+            <input id = "piano" type = "text"><br>
+
+        </div>
+
+                <div>
+            <h2> Violin </h2>
+            <img src ="Violin.PNG"><br>
+            <span><h3> Price $100 </h3></span>
+            <p><h4>  violin that comes with a bow! 
+            </h4>
+            </p>
+            <input id = "violin" type = "text"><br>
+            <button onclick = "purchase"> purchase </button>
+        </div>
+    </body> 
+</html>
